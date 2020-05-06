@@ -1,0 +1,30 @@
+{
+  "name": "rattsus-binance",
+  "version": "1.0.0",
+  "description": "Bot Para Binance",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorratts13/Rattsus.git"
+  },
+  "keywords": [
+    "Bitcoin",
+    "btc",
+    "bots"
+  ],
+  "author": "Victor Ratts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorratts13/Rattsus/issues"
+  },
+  "homepage": "https://github.com/victorratts13/Rattsus#readme",
+  "dependencies": {
+    "clear-module": "^4.1.1",
+    "node-binance-api": "^0.10.7",
+    "technicalindicators": "^3.0.0"
+  }
+}
