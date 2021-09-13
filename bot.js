@@ -16,6 +16,7 @@ const binance = require('node-binance-api')().options({
 });
 
 binance.websockets.chart("BTCUSDT", interval, (symbol, interval, chart) => {
+    //console.log(chart)
     clearModule('./var/lastOrder');
     const tempFile = require('./var/lastOrder');
     var consoles = '\033c\x1b[37m Bem Vindo ao Rattsus - Binance (Bot) \n numero de requisições: ' + requests++;
@@ -102,7 +103,7 @@ binance.websockets.chart("BTCUSDT", interval, (symbol, interval, chart) => {
 
     binance.balance((err, balances) => {
         if (err) {
-            console.log('Balance Error -> ' + err)
+            console.log('Balance Error -> ' + JSON.parse(err.body).msg)
         } else {
             binance.exchangeInfo((err, data) => {
                 if (err) {
@@ -144,7 +145,6 @@ binance.websockets.chart("BTCUSDT", interval, (symbol, interval, chart) => {
                     let priceOrder = candleData.c.slice(-1)[0];
                     let walletBTC = balances.BTC.available / 1;
                     let walletUSDT = balances.USDT.available / 1;
-
 
                     walletBTC = walletBTC.toFixed(6);
                     walletUSDT = walletUSDT.toFixed(6);
